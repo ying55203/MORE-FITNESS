@@ -2780,8 +2780,8 @@ nav {
 
     /* banner */
     #banner {
+        height: 80vh;
         width: 100%;
-        height: 844px;
         background-image: url(../image/index/Banner-bg\(390\).png);
         background-size: 100% 479.071px;
         position: relative;

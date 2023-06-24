@@ -1710,6 +1710,9 @@ footer > div{
         right: 1rem;
     }
     /* 導覽列 */
+    .menu a{
+        padding: 0.5rem 0.8rem;
+    }
     #topbar{
         padding: 0.2rem;
     }
