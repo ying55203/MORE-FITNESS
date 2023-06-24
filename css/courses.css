@@ -1,0 +1,2979 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap');
+
+/* eric css reset */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    box-sizing: border-box;
+    /* 不累加邊框與內距 */
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+        "蘋方-繁", "PingFang TC", "Noto Sans TC", "黑體-繁", "Heiti TC", "微軟正黑體", "Microsoft JhengHei", sans-serif;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* 共用 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+#topbar,
+header,
+footer img {
+    display: block;
+    width: 100%;
+}
+
+img.logo {
+    width: 23%;
+    display: none;
+}
+
+/* -------------------------------------------------------- */
+/* 導覽列 */
+#topbar{
+    position: fixed;/*固定上方*/
+    display: flex;
+    justify-content: center;/* 主軸:置中 */
+    top: 0;
+    left: 0;
+    z-index: 99;
+    padding: 1.2rem;
+    width: 100%;
+}
+nav{
+    display: flex;
+    justify-content:space-between;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0px 2px 6px rgba(0,0,0,0.25);
+    font-size: 1.125rem;
+}
+.logoMore img{
+    display: block;
+    width: 90%;
+}
+.morelogo{
+    width: 16%;
+    margin:0 -1rem 0 1rem;
+}
+#topbar ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.menu{
+    padding-top: 2px;/* 底線的高度 */
+}
+.menu a{
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color:#424242;
+    padding: 0.5rem 0.8rem;
+}
+.menu a:hover{
+	color: #C94344;
+}
+.menu li::after{
+    content: "";
+    display: block;
+    width: 0%;
+    height: 2px;
+    background-color: #C94344;
+}
+.menu li:hover::after{
+    width: 100%;
+    /* transition: .1s; */
+}
+.menu a:active{
+    color: #C94344;
+}
+.reserve_btn a{
+    display: block;
+    text-decoration: none;
+    padding: 1rem 1.8rem;
+    margin:0 1rem 0 -2rem;
+    border-radius: 50px;
+    border: 2px solid transparent;
+    background-color: #C94344;
+    font-weight: 700;
+    color:#fff;
+}
+.reserve_btn a:hover{
+    background-color: #FFEAEA;
+    color: #C94344;
+    border: 2px solid #C94344;
+}
+
+/* main */
+main {
+    position: relative;
+}
+
+/* banner */
+.banner {
+    width: 100%;
+    height: 1035px;
+    background-image: url(../image/class/bannerBg.png);
+    position: relative;
+}
+
+.banner_mid {
+    display: flex;
+    flex-direction: column;
+    z-index: 3;
+    width: 100%;
+    height: 70%;
+    position: absolute;
+    top: 300px;
+}
+
+.banner_title {
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding-top: 110px;
+}
+
+.title_bg {
+    width: 280px;
+    z-index: -1;
+}
+
+.banner_title p {
+    color: white;
+    z-index: 999;
+    position: absolute;
+    font-size: 32px;
+}
+
+.banner_style {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+}
+
+.bannerCircle {
+    width: 22.93%;
+    z-index: -2;
+    position: absolute;
+    top: 0px;
+}
+
+.banner_style h1 {
+    z-index: 1;
+    -webkit-text-stroke: 3px #8C4948;
+    color: #FFFFFF;
+    font-size: 530%;
+    font-weight: 900;
+    display: block;
+    position: absolute;
+    top: -55px;
+}
+
+.bannerImg {
+    width: 49%;
+    z-index: -2;
+    position: absolute;
+}
+
+
+/* 分頁切換 開始 */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    -moz-column-gap: 5px;
+    column-gap: 5px;
+    width: 100%;
+    position: relative;
+    margin-top: -100px;
+}
+
+.tabs input[type=radio] {
+    display: none;
+}
+
+.tabs input[type=radio]:checked+label {
+    color: black;
+    background-color: transparent;
+    transform: translatey(1px);
+}
+
+.tabs input[type=radio]:checked+label+.tab-content {
+    display: block;
+}
+
+.tabs .tab-content {
+    margin: 50px auto;
+}
+
+/* 分頁標題 */
+.tabs label {
+    padding: 0.5em 0.75em;
+    /* 課程外框線 */
+    /* border: 1px solid #ccc; */
+    /* border-bottom: unset; */
+    /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+    order: 0;
+    color: #000;
+    font-size: 36.71px;
+}
+
+
+.title:hover {
+    color: #8C4948;
+    border-bottom: 3px solid #8C4948;
+}
+
+.tabs .tab-content {
+    display: none;
+    width: 100%;
+    /* 大外框線 */
+    /* border: 1px solid #ccc;
+    border-radius: 5px; */
+    order: 1;
+    margin-top: 100px;
+}
+
+.all_title_pic {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 80px;
+}
+
+/* 分頁切換 結束 */
+
+
+.tabs ul {
+    z-index: 1;
+}
+
+/* 課程列表 */
+
+
+
+
+
+/* 課程列表內容 */
+.cours_content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 100px;
+    margin-top: 0px;
+
+}
+
+.cours_content li {
+    flex: 1;
+    margin: 0 50px;
+    margin-top: 50px;
+}
+
+
+.cours_com {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 50px;
+    margin-bottom: 100px;
+    width: 330px;
+}
+
+.cours_num {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+}
+
+.cours_num h1 {
+    -webkit-text-stroke: 3px #8C4948;
+    color: #FFFFFF;
+    font-size: 100px;
+    font-weight: 700;
+    font-weight: bolder;
+    z-index: 1;
+    margin-left: 5px;
+    margin-bottom: 20px;
+}
+
+.cours_num img {
+    width: 133px;
+    z-index: -1;
+    top: 50px;
+    position: absolute;
+}
+
+.con_title {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 72px;
+
+}
+
+.con_title p {
+    font-size: 32px;
+    font-weight: 700;
+    color: white;
+    z-index: 999;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 72px;
+}
+
+.con_title img {
+    width: 299px;
+    height: 72px;
+    position: absolute;
+    bottom: 10px;
+}
+
+.cours_intro {
+
+    position: relative;
+    margin-top: -40px;
+    z-index: -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cours_intro_img {
+    width: 330px;
+    height: 235px;
+    margin-bottom: 40px;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 1px solid #fff;
+    border-radius: 20px;
+}
+
+.cours_intro_img img {
+    display: block;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    width: fit-content;
+    height: auto;
+    margin-bottom: 40px;
+    flex-shrink: 0;
+}
+
+.cours_intro p {
+    margin-bottom: 30px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 200%;
+}
+
+/* 分類介紹 */
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    height: 40px;
+
+
+}
+
+.btn a {
+    display: flex;
+    text-decoration: none;
+    line-height: 200%;
+    width: 168px;
+    height: 60px;
+    color: #000;
+    font-weight: 600;
+    font-size: 24px;
+    letter-spacing: 0.1em;
+    border-bottom: 1px solid #000;
+    background-image: url(../image/class/btn.png);
+    background-repeat: no-repeat;
+    background-position: bottom 11px right 0;
+}
+
+.btn a:hover {
+    border-bottom: 1px solid #F0B278;
+    background-image: url(../image/class/btn_hover.png);
+    background-position: bottom 10px;
+}
+
+
+/* 課程內容 */
+.whole_content {
+    background-image: url(../image/class/midBg.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: fit-content;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding-top: 00px;
+    padding-bottom: 00px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
+
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 100px 0;
+
+}
+
+.item_1,
+.item_2,
+.item_3 {
+
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.pic_1 img {
+    width: 480px;
+    height: 398.88px;
+}
+
+.pic_2 img {
+    flex: 1;
+    width: 475px;
+    height: 455px;
+}
+
+.txt {
+    flex: 1;
+    width: 55%;
+    margin: 0 80px;
+    margin-top: 50px;
+
+}
+
+.inner_title {
+    display: flex;
+    flex-direction: row;
+    height: 104px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.title_con {
+    position: absolute;
+
+    left: 100px;
+}
+
+.title_con p {
+    font-size: 24px;
+    line-height: 200%;
+}
+
+.title_con h1 {
+    font-size: 44px;
+}
+
+.inner_content {
+    width: 342px;
+    height: 160px;
+    line-height: 200%;
+    font-size: 20;
+    letter-spacing: .5px;
+    text-align: justify;
+}
+
+/* 內文圖示 */
+.title_pic_1 {
+    width: 104px;
+    height: 104px;
+    background-image: url(../image/class/cours_pic1.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 20px;
+    left: -10px;
+}
+
+.title_pic_2 {
+    width: 104px;
+    height: 104px;
+    background-image: url(../image/class/cours_pic2.png);
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom:0px;
+    left: -10px;
+}
+
+.yellow p {
+    color: #9999c3;
+}
+
+.purple p {
+    color: #F88D8E;
+}
+
+
+/* 色塊定位 */
+.color_block {
+    position: relative;
+}
+
+.rt {
+    position: absolute;
+}
+
+.lb {
+    position: absolute;
+    right: 0;
+    top: 720px;
+    z-index: -1;
+}
+
+
+
+
+.lb_768 {
+    transform: scaleX(-1);
+    opacity: 0;
+}
+
+.rt_768 {
+    transform: scaleX(-1);
+    opacity: 0;
+}
+
+.color_768_2,
+.color_768 {
+    transform: scaleX(-1);
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.p_390 {
+    opacity: 0;
+}
+
+.c_3 {
+    position: absolute;
+    opacity: 0;
+}
+
+.c_2 {
+    position: absolute;
+    opacity: 0;
+}
+
+@media (max-width:1440px) {
+
+    /* main */
+    main {
+        position: relative;
+    }
+
+    /* banner */
+    .banner {
+        width: 100%;
+        height: 735px;
+        background-image: url(../image/class/bannerBg.png);
+        background-size: 100% 735.09px;
+        position: relative;
+    }
+
+    .banner_mid {
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        width: 100%;
+        height: 70%;
+        position: absolute;
+        top: 200px;
+    }
+
+    .banner_title {
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        padding-top: 110px;
+    }
+
+    .title_bg {
+        width: 280px;
+        z-index: -1;
+    }
+
+    .banner_title p {
+        color: white;
+        z-index: 999;
+        position: absolute;
+        font-size: 32px;
+    }
+
+    .banner_style {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .bannerCircle {
+        width: 22.93%;
+        z-index: -2;
+        position: absolute;
+        top: 0px;
+    }
+
+    .banner_style h1 {
+        z-index: 1;
+        -webkit-text-stroke: 3px #8C4948;
+        color: #FFFFFF;
+        font-size: 530%;
+        font-weight: 900;
+        display: block;
+        position: absolute;
+        top: -55px;
+    }
+
+    .bannerImg {
+        width: 700px;
+        height: 332px;
+        z-index: -2;
+        position: absolute;
+    }
+
+
+    /* 分頁切換 開始 */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        -moz-column-gap: 5px;
+        column-gap: 5px;
+        width: 100%;
+        position: relative;
+    }
+
+
+
+
+
+
+    .tabs .tab-content {
+        margin: 50px auto;
+
+    }
+
+
+
+    /* 分頁標題 */
+    .tabs label {
+        padding: 0.5em 0.75em;
+        /* 課程外框線 */
+        /* border: 1px solid #ccc; */
+        /* border-bottom: unset; */
+        /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+        order: 0;
+        color: #000;
+        font-size: 27.58px;
+    }
+
+
+    .title:hover {
+        color: #8C4948;
+        border-bottom: 3px solid #8C4948;
+    }
+
+    .tabs .tab-content {
+        display: none;
+        width: 100%;
+        /* 大外框線 */
+        /* border: 1px solid #ccc;
+    border-radius: 5px; */
+        order: 1;
+        margin-top: 100px;
+    }
+
+    .all_title_pic {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+    }
+
+    /* 分頁切換 結束 */
+
+
+
+
+    /* 課程列表 */
+
+
+    /* 課程列表標題 */
+
+
+
+    /* 課程列表內容 */
+    .cours_content {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 100px;
+        margin-top: 0px;
+
+    }
+
+    .cours_content li {
+        flex: 1;
+        margin: 0 20px;
+        margin-top: 20px;
+    }
+
+
+    .cours_com {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0px;
+        margin-bottom: 100px;
+        width: 330px;
+        z-index: 1;
+    }
+
+    .cours_num {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+    }
+
+    .cours_num h1 {
+        -webkit-text-stroke: 3px #8C4948;
+        color: #FFFFFF;
+        font-size: 75.13px;
+        font-weight: 700;
+        font-weight: bolder;
+        z-index: 1;
+        margin-left: 5px;
+        margin-bottom: 20px;
+    }
+
+    .cours_num img {
+        width: 99.93px;
+        z-index: -1;
+        top: 40px;
+        position: absolute;
+    }
+
+    .con_title {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        height: 72px;
+
+    }
+
+    .con_title p {
+        font-size: 24px;
+        font-weight: 700;
+        color: white;
+        z-index: 999;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 72px;
+    }
+
+    .con_title img {
+        width: 224.65px;
+        height: 54.1px;
+        position: absolute;
+        bottom: 30px;
+        left: 55px;
+    }
+
+    .cours_intro {
+
+        position: relative;
+        margin-top: -40px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cours_intro_img {
+        width: 247.94px;
+        height: 177.1px;
+        margin-bottom: 40px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border: 1px solid #fff;
+        border-radius: 20px;
+    }
+
+    .cours_intro_img img {
+        display: block;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        width: fit-content;
+        height: auto;
+        margin-bottom: 40px;
+        flex-shrink: 0;
+    }
+
+    .cours_intro p {
+        margin-bottom: 30px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 200%;
+    }
+
+    /* 分類介紹 */
+    .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        height: 40px;
+
+
+    }
+
+    .btn a {
+        display: flex;
+        text-decoration: none;
+        line-height: 200%;
+        width: 168px;
+        height: 60px;
+        color: #000;
+        font-weight: 600;
+        font-size: 24px;
+        letter-spacing: 0.1em;
+        border-bottom: 1px solid #000;
+        background-image: url(../image/class/btn.png);
+        background-repeat: no-repeat;
+        background-position: bottom 11px right 0;
+    }
+
+    .btn a:hover {
+        border-bottom: 1px solid #F0B278;
+        background-image: url(../image/class/btn_hover.png);
+        background-position: bottom 10px;
+    }
+
+
+    /* 課程內容 */
+    .whole_content {
+        background-image: url(../image/class/midBg.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: fit-content;
+        margin-top: 100px;
+        margin-bottom: 50px;
+        padding-top: 00px;
+        padding-bottom: 00px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+
+    }
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 100px 0;
+
+    }
+
+    .item_1,
+    .item_2,
+    .item_3 {
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+    }
+
+    .pic_1 img {
+        width: 360px;
+        height: 292.93px;
+        margin: 0 20px;
+    }
+
+    .pic_2 img {
+        flex: 1;
+        width: 356.88px;
+        height: 324.18px;
+        margin: 0 10px;
+    }
+
+    .txt {
+        flex: 1;
+        width: 55%;
+        margin: 0 80px;
+        margin-top: 50px;
+
+    }
+
+    .inner_title {
+        display: flex;
+        flex-direction: row;
+        height: 104px;
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .title_con {
+        position: absolute;
+
+        left: 100px;
+    }
+
+    .title_con p {
+        font-size: 24px;
+        line-height: 200%;
+    }
+
+    .title_con h1 {
+        font-size: 44px;
+    }
+
+    .inner_content {
+        width: 342px;
+        height: 160px;
+        line-height: 200%;
+        font-size: 20;
+        letter-spacing: .5px;
+        text-align: justify;
+    }
+
+    /* 內文圖示 */
+    .title_pic_1 {
+        width: 85.16px;
+        height: 85.16px;
+        background-image: url(../image/class/cours_pic1.png);
+        background-repeat: no-repeat;
+        background-size: 85px;
+        position: absolute;
+        bottom: 30px;
+        left: -10px;
+    }
+
+    .title_pic_2 {
+        width: 85.16px;
+        height: 85.16px;
+        background-image: url(../image/class/cours_pic2.png);
+        background-repeat: no-repeat;
+        background-size: 85px;
+        position: absolute;
+        bottom: 10px;
+        left: -10px;
+    }
+
+    .yellow p {
+        color: #9999c3;
+    }
+
+    .purple p {
+        color: #F88D8E;
+    }
+
+
+    /* 色塊定位 */
+    .color_block {
+        position: relative;
+    }
+
+    .rt {
+        position: absolute;
+        width: 208px;
+        height: 214px;
+    }
+
+    .lb {
+        position: absolute;
+        right: 0;
+        top: 720px;
+        z-index: 1;
+        width: 328px;
+        height: 301px;
+    }
+
+}
+
+
+
+
+
+/* max-width:768px */
+@media (max-width:768px) {
+
+    /* main */
+    main {
+        position: relative;
+    }
+
+    /* banner */
+    .banner {
+        width: 100%;
+        height: 735px;
+        background-image: url(../image/class/Banner-bg768.png);
+        background-size: 100% 735.09px;
+        position: relative;
+    }
+
+    .banner_mid {
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        width: 100%;
+        height: 70%;
+        position: absolute;
+        top: 200px;
+    }
+
+    .banner_title {
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        padding-top: 110px;
+    }
+
+    .title_bg {
+        width: 280px;
+        z-index: -1;
+    }
+
+    .banner_title p {
+        color: white;
+        z-index: 999;
+        position: absolute;
+        font-size: 32px;
+    }
+
+    .banner_style {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .bannerCircle {
+        width: 22.93%;
+        z-index: -2;
+        position: absolute;
+        top: 0px;
+    }
+
+    .banner_style h1 {
+        z-index: 1;
+        -webkit-text-stroke: 3px #8C4948;
+        color: #FFFFFF;
+        font-size: 530%;
+        font-weight: 900;
+        display: block;
+        position: absolute;
+        top: -55px;
+    }
+
+    .bannerImg {
+        width: 700px;
+        height: 332px;
+        z-index: -2;
+        position: absolute;
+    }
+
+
+    /* 分頁切換 開始 */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        -moz-column-gap: 5px;
+        column-gap: 5px;
+        width: 100%;
+        position: relative;
+        margin-top: 10px;
+    }
+
+
+
+
+
+
+    .tabs .tab-content {
+        margin: 0px auto;
+
+    }
+
+
+
+    /* 分頁標題 */
+    .tabs label {
+        padding: 0.1em 0.1em;
+        /* 課程外框線 */
+        /* border: 1px solid #ccc; */
+        /* border-bottom: unset; */
+        /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+        order: 0;
+        color: #000;
+        font-size: 27.58px;
+    }
+
+
+    .title:hover {
+        color: #8C4948;
+        border-bottom: 3px solid #8C4948;
+    }
+
+    .tabs .tab-content {
+        display: none;
+        width: 100%;
+        /* 大外框線 */
+        /* border: 1px solid #ccc;
+    border-radius: 5px; */
+        order: 1;
+        margin-top: 30px;
+    }
+
+    .all_title_pic {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    /* 分頁切換 結束 */
+
+
+
+
+    /* 課程列表 */
+
+
+    /* 課程列表標題 */
+
+
+
+    /* 課程列表內容 */
+    .cours_content {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 100px;
+        margin-top: 0px;
+
+    }
+
+    .cours_content li {
+        flex: 1;
+        margin: 0 20px;
+        margin-top: 20px;
+    }
+
+
+
+    .cours_com {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 86px;
+        margin-bottom: 100px;
+        width: 330px;
+        z-index: 1;
+    }
+
+    .cours_num {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+    }
+
+    .cours_num h1 {
+        -webkit-text-stroke: 3px #8C4948;
+        color: #FFFFFF;
+        font-size: 84.79px;
+        font-weight: 700;
+        font-weight: bolder;
+        z-index: 1;
+        margin-left: 5px;
+        margin-bottom: 30px;
+    }
+
+    .cours_num img {
+        width: 112.78px;
+        z-index: -1;
+        top: 50px;
+        position: absolute;
+    }
+
+    .con_title {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        height: 72px;
+
+    }
+
+    .con_title p {
+        font-size: 27.13px;
+        font-weight: 700;
+        color: white;
+        z-index: 999;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 72px;
+    }
+
+    .con_title img {
+        width: 253.54px;
+        height: 61.05px;
+        position: absolute;
+        bottom: 30px;
+        left: 45px;
+    }
+
+    .cours_intro {
+
+        position: relative;
+        margin-top: -40px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cours_intro_img {
+        width: 279.82px;
+        height: 199.87px;
+        margin-bottom: 40px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border: 1px solid #fff;
+        border-radius: 20px;
+    }
+
+    .cours_intro_img img {
+        display: block;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        width: fit-content;
+        height: auto;
+        margin-bottom: 40px;
+        flex-shrink: 0;
+    }
+
+    .cours_intro p {
+        margin-bottom: 30px;
+        font-size: 20px;
+        text-align: center;
+        line-height: 200%;
+    }
+
+    /* 分類介紹 */
+    .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        height: 40px;
+
+
+    }
+
+    .btn a {
+        display: flex;
+        text-decoration: none;
+        line-height: 300%;
+        width: 168px;
+        height: 60px;
+        color: #000;
+        font-weight: 600;
+        font-size: 20.35px;
+
+    }
+
+    .btn a:hover {
+        border-bottom: 1px solid #F0B278;
+        background-image: url(../image/class/btn_hover.png);
+        background-position: bottom 10px;
+    }
+
+
+    /* 課程內容 */
+    .whole_content {
+        background-image: url(../image/class/midBg.png);
+        background-size: 1200px 502;
+        background-position: right 40px;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: fit-content;
+        margin-top: 0px;
+        margin-bottom: 50px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+
+    }
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0;
+        margin-bottom: 50px;
+
+    }
+
+    .item_1,
+    .item_2,
+    .item_3 {
+
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+    }
+
+    .pic_1 img {
+        width: 230px;
+        height: 186.82px;
+        margin: 0 20px;
+        margin-top: 95px;
+    }
+
+    .pic_2 img {
+        flex: 1;
+        width: 220px;
+        height: 210.94px;
+        margin: 0 10px;
+        margin-top: 95px;
+    }
+
+    .txt {
+        flex: 1;
+        width: 45%;
+        margin: 0 0px;
+        margin-top: 50px;
+
+    }
+
+    .inner_title {
+        display: flex;
+        flex-direction: row;
+        height: 104px;
+        position: relative;
+        margin-bottom: 0px;
+    }
+
+    .title_con {
+        position: absolute;
+        left: 100px;
+    }
+
+    .title_con p {
+        font-size: 16.45px;
+        line-height: 200%;
+    }
+
+    .title_con h1 {
+        font-size: 29.6px;
+    }
+
+    .inner_content {
+        width: 280px;
+        height: 112px;
+        line-height: 200%;
+        font-size: 14px;
+        letter-spacing: .5px;
+        text-align: justify;
+        margin: 0 20px;
+    }
+
+    .line img {
+        width: 100%;
+    }
+
+    /* 內文圖示 */
+    .title_pic_1 {
+        width: 70.03px;
+        height: 70.03px;
+        background-image: url(../image/class/cours_pic1.png);
+        background-size: 70.03px 70.03px;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 35px;
+        left: 10px;
+    }
+
+    .title_pic_2 {
+        width: 70.03px;
+        height: 70.03px;
+        background-image: url(../image/class/cours_pic2.png);
+        background-size: 70.03px 70.03px;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 35px;
+        left: 10px;
+    }
+
+    .yellow p {
+        color: #9999c3;
+    }
+
+    .purple p {
+        color: #F88D8E;
+    }
+
+
+    /* 色塊定位 */
+    .color_block {
+        position: relative;
+        width: 0;
+    }
+
+    .rt {
+        position: absolute;
+        width: 189.45px;
+        height: 144.48px;
+    }
+
+    .lb {
+        position: absolute;
+        right: -768px;
+        top: 700px;
+        z-index: 1;
+        width: 198px;
+        height: 189px;
+    }
+
+    .color_768 {
+        width: 219px;
+        height: 182px;
+        opacity: 1;
+        position: absolute;
+        top: 1400px;
+        left: 0px;
+        transform: scaleX(1);
+    }
+
+    .color_block_2 {
+        position: relative;
+        width: 768px;
+    }
+
+    .rt_768 {
+        position: absolute;
+        width: 189.45px;
+        height: 144.48px;
+        transform: scaleX(-1);
+        right: 0;
+    }
+
+    .lb_768 {
+        position: absolute;
+        right: -768px;
+        top: 2800px;
+        z-index: 1;
+        width: 198px;
+        height: 189px;
+        transform: scaleX(-1);
+        opacity: 1;
+        left: 0;
+    }
+
+
+
+
+
+    .rt_768 {
+        transform: scaleX(-1);
+        opacity: 1;
+        right: 0;
+        top: 2100px;
+    }
+
+
+
+    .color_768_2 {
+        position: absolute;
+        opacity: 1;
+        width: 219px;
+        height: 182px;
+        right: 0;
+        top: 3500px;
+    }
+
+}
+
+
+/* max-width:390px */
+@media (max-width:390px) {
+
+    /* main */
+    main {
+        position: relative;
+    }
+
+    /* banner */
+    .banner {
+        width: 100%;
+        height: 397px;
+        background-image: url(../image/class/Banner-bg_390.png);
+        background-repeat: no-repeat;
+        background-size: 100% 397px;
+        position: relative;
+    }
+
+    .banner_mid {
+        display: flex;
+        flex-direction: column;
+        z-index: 3;
+        width: 100%;
+        height: 70%;
+        position: absolute;
+        top: 220px;
+    }
+
+    .banner_title {
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2;
+        padding-top: 50px;
+    }
+
+    .title_bg {
+        width: 219px;
+        height: 48px;
+        z-index: -1;
+    }
+
+    .banner_title p {
+        color: white;
+        z-index: 999;
+        position: absolute;
+        font-size: 22px;
+    }
+
+    .banner_style {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        z-index: 1;
+    }
+
+    .bannerCircle {
+        width: 0;
+        opacity: 0;
+        z-index: -2;
+        position: absolute;
+        top: 0px;
+    }
+
+    .banner_style h1 {
+        font-size: 55px;
+        top: -55px;
+    }
+
+    .bannerImg {
+        width: 0px;
+        height: 0px;
+        opacity: 0;
+        z-index: -2;
+        position: absolute;
+    }
+
+
+    /* 分頁切換 開始 */
+    .tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        -moz-column-gap: 5px;
+        column-gap: 5px;
+        width: 100%;
+        position: relative;
+        margin-top: 10px;
+        overflow: hidden;
+    }
+
+    .tabs .tab-content {
+        margin: 0px auto;
+
+    }
+
+
+
+    /* 分頁標題 */
+    .tabs label {
+        padding: 0;
+        /* 課程外框線 */
+        /* border: 1px solid #ccc; */
+        /* border-bottom: unset; */
+        /* border-top-left-radius: 5px;
+    border-top-right-radius: 5px; */
+        order: 0;
+        color: #000;
+        font-size: 14px;
+        padding-bottom: 8px;
+
+    }
+
+    .tabs::before {
+        position: absolute;
+        content: '';
+        border-bottom: 1px solid #616161;
+        width: 65%;
+        top: 24px;
+        z-index: -1;
+
+    }
+
+    .vs_390 {
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .tabs label:hover {
+        color: #8C4948;
+        border-bottom: 3px solid #8C4948;
+
+    }
+
+    .tabs .tab-content {
+        display: none;
+        width: 100%;
+        /* 大外框線 */
+        /* border: 1px solid #ccc;
+    border-radius: 5px; */
+        order: 1;
+        margin-top: 30px;
+    }
+
+    .all_title_pic {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: -50px;
+        opacity: 0;
+    }
+
+    /* 分頁切換 結束 */
+
+
+
+
+    /* 課程列表 */
+
+
+    /* 課程列表標題 */
+
+
+
+    /* 課程列表內容 */
+    .cours_content {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 100px;
+        margin-top: 0px;
+
+    }
+
+    .cours_content li {
+        flex: 1;
+        margin: 0 20px;
+        margin-top: 20px;
+    }
+
+
+
+    .cours_com {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 86px;
+        margin-bottom: 100px;
+        width: 330px;
+        z-index: 1;
+    }
+
+    .cours_num {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        position: relative;
+    }
+
+    .cours_num h1 {
+        -webkit-text-stroke: 3px #8C4948;
+        color: #FFFFFF;
+        font-size: 81.36px;
+        font-weight: 700;
+        font-weight: bolder;
+        z-index: 1;
+        margin-left: 5px;
+        margin-bottom: 30px;
+    }
+
+    .cours_num img {
+        width: 108.21px;
+        z-index: -1;
+        top: 50px;
+        position: absolute;
+    }
+
+    .con_title {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: center;
+        height: 72px;
+
+    }
+
+    .con_title p {
+        font-size: 27.13px;
+        font-weight: 700;
+        color: white;
+        z-index: 999;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        height: 72px;
+    }
+
+    .con_title img {
+        width: 243.28px;
+        height: 58.58px;
+        position: absolute;
+        bottom: 30px;
+        left: 45px;
+    }
+
+    .cours_intro {
+
+        position: relative;
+        margin-top: -50px;
+        z-index: -1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cours_intro_img {
+        width: 268.5px;
+        height: 191.79px;
+        margin-bottom: 30px;
+        flex-shrink: 0;
+        overflow: hidden;
+        border: 1px solid #fff;
+        border-radius: 20px;
+    }
+
+    .cours_intro_img img {
+        display: block;
+        margin-right: 50px;
+        margin-bottom: 50px;
+        width: fit-content;
+        height: auto;
+        margin-bottom: 150px;
+        flex-shrink: 0;
+    }
+
+    .cours_intro p {
+        margin: 0 30px;
+        width: 262px;
+        height: 102px;
+        margin-bottom: 30px;
+        font-size: 17px;
+        text-align: center;
+        line-height: 200%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+    }
+
+    /* 分類介紹 */
+    .btn {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+        height: 40px;
+
+
+    }
+
+    .btn a {
+        display: flex;
+        text-decoration: none;
+        line-height: 200%;
+        width: 112px;
+        height: 40px;
+        color: #000;
+        font-weight: 600;
+        font-size: 17px;
+        background-size: 20.39px 20.39px;
+
+    }
+
+    .btn a:hover {
+        border-bottom: 1px solid #F0B278;
+        background-image: url(../image/class/btn_hover.png);
+        background-position: bottom 10px;
+    }
+
+
+    /* 課程內容 */
+    .whole_content {
+        background-image: url(../image/class/intro_bg_390.png);
+        background-size: none;
+        background-position: right 40px;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: fit-content;
+        margin-top: 0px;
+        margin-bottom: 50px;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        z-index: -1;
+
+    }
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 0;
+        margin-bottom: 50px;
+
+    }
+
+    .item_1,
+    .item_2,
+    .item_3 {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .item_1,
+    .item_3 {
+        position: relative;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        padding-bottom: 450px;
+    }
+
+
+
+    .item_1 .txt,
+    .item_3 .txt {
+        position: absolute;
+        top: 100px;
+        left: -160px;
+    }
+
+    .item_1 .pic_2 img,
+    .item_3 .pic_2 img {
+        position: absolute;
+        top: -110px;
+        margin-bottom: 70px;
+        left: -120px;
+    }
+
+
+
+    .pic_1 img {
+        width: 230px;
+        height: 186.82px;
+        margin: 0 20px;
+        margin-top: 95px;
+        position: absolute;
+        top: -100px;
+        left: -150px;
+    }
+
+    .pic_2 img {
+        flex: 1;
+        width: 220px;
+        height: 210.94px;
+        margin: 0 10px;
+        margin-top: 95px;
+        margin-left: 50px;
+    }
+
+    .txt {
+        flex: 1;
+        width: 100%;
+        margin: 0 0px;
+        margin-top: 70px;
+
+    }
+
+    .inner_title {
+        display: flex;
+        flex-direction: row;
+        height: 104px;
+        position: relative;
+        margin-bottom: 0px;
+        margin-top: 30px;
+    }
+
+    .title_con {
+        position: absolute;
+        left: 100px;
+        width: 300px;
+    }
+
+    .title_con p {
+        font-size: 20px;
+        line-height: 200%;
+    }
+
+    .title_con h1 {
+        font-size: 34px;
+    }
+
+    .inner_content {
+        width: 280px;
+        height: 112px;
+        line-height: 200%;
+        font-size: 14px;
+        letter-spacing: .5px;
+        text-align: justify;
+        margin: 0 20px;
+    }
+
+    .line img {
+        width: 100%;
+    }
+
+    /* 內文圖示 */
+    .title_pic_1 {
+        width: 85px;
+        height: 85px;
+        background-image: url(../image/class/cours_pic1.png);
+        background-size: 70.03px 70.03px;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 5px;
+        left: 15px;
+    }
+
+    .title_pic_2 {
+        width: 85px;
+        height: 85px;
+        background-image: url(../image/class/cours_pic2.png);
+        background-size: 70.03px 70.03px;
+        background-repeat: no-repeat;
+        position: absolute;
+        bottom: 5px;
+        left: 15px;
+    }
+
+    .yellow p {
+        color: #9999c3;
+    }
+
+    .purple p {
+        color: #F88D8E;
+    }
+
+
+    /* 色塊定位 */
+    .color_block {
+        position: relative;
+        width: 0;
+    }
+
+    .p_390 {
+        position: absolute;
+        top: 150px;
+        opacity: 1;
+    }
+
+    .c_3 {
+        opacity: 1;
+        top: 2800px;
+    }
+    
+    .c_2 {
+        opacity: 1;
+        top: 1450px;
+    }
+
+    .color_768,
+    .color_block_2,
+    .rt_768,
+    .lb_768,
+    .rt_768,
+    .color_768_2,
+    .lb,
+    .rt {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        top: 0px;
+        left: 0px;
+        transform: scaleX(0);
+    }
+
+
+
+
+
+
+}
+
+/* 頁尾區 */
+footer {
+    margin-top: 10vh;
+    background-image: url(../image/Footer-bg.jpg);
+	color: #621D1C;
+	padding: 4rem;
+	/* 內距會包含背景 */
+	text-align: center;
+}
+.footer_icon a {
+	display: block;
+    margin-right: 2rem;
+    width: 45px;
+	height: 45px;
+}
+.icon-fb {
+	background-image: url(../image/icon/fb.svg);
+}
+.icon-ig {
+	background-image: url(../image/icon/ig.svg);
+
+}
+.icon-line {
+	background-image: url(../image/icon/line.svg);
+}
+.icon-fb:hover{
+    background-image: url(../image/icon/fb_h.png);
+}
+.icon-ig:hover{
+    background-image: url(../image/icon/ig_h.png);
+}
+.icon-line:hover{
+    background-image: url(../image/icon/line_h.png);
+}
+footer ul{
+    display: flex;
+	justify-content: center;
+}
+h2.footer_title{
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding: 0 .5rem .6rem .5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 5px solid #FFC42D;
+}
+.menu_title{
+    font-weight: 400;
+    font-size: 1.125rem;
+    margin: 1rem 2.5rem;
+    padding-bottom: 1rem;
+    
+}
+.menu_title p{
+    margin: 1rem 0;
+    font-weight: 400;
+}
+.footer_menu{
+    font-size: 1.125rem;
+}
+.footer_menu a{
+    display: block;
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    color: #621D1C;
+}
+.footer_menu li{
+    display: flex;
+    flex-direction: column;
+}
+.footer_reserve_btn img{
+    width: 20%;
+}
+.footer_reserve_btn .r_btn{
+    background-image: url(../image/icon/right_w.svg);
+    width: 12px;
+    height: 20px;
+    margin-left: 3rem;
+    margin-top: 5px;
+}
+.footer_reserve_btn a{
+    margin-left: 3rem;
+    padding: 1rem 3rem;
+    display: flex;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 150%;
+    text-align: center;
+    letter-spacing: 0.2em;
+    font-weight: 700;
+    border: 2.5px solid #C94344;
+    background-color: #C94344;
+    border-radius: 50px;
+}
+.footer_reserve_btn{
+    flex-direction: row;
+    justify-content: center;
+}
+.footer_reserve_btn a:hover{
+    background-color: transparent;
+    color: #C94344;
+    border: 2.5px solid #C94344;
+}
+.footer_reserve_btn a:hover .r_btn{
+    background-image: url(../image/icon/right.svg);
+}
+.map{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin: 1rem 0;
+}
+.map a{
+    display:block;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #C94344;
+    margin-left: .8rem;
+    padding: .5rem 1.1rem;
+    border-radius: 30px;
+    border:2px solid #C94344;
+}
+footer > div{
+    display: flex;
+    flex-direction: column;
+    /* 設定主軸為垂直 */
+    justify-content: flex-start;
+    /* 設定主軸(垂直)靠上 */
+    align-items: center;
+    /* 設定幅軸(水平)置中 */
+}
+/* top按鈕 */
+#fixedTop img{
+    width: 40px;
+    height: 40px;
+}
+#fixedTop{
+    color: #fff;
+    text-decoration:none;
+    background-color:#FFC42D;
+    border-radius: 50px;
+    position: fixed;
+    padding: 10px;
+    right: 20px;
+    bottom: 20px;
+    z-index: 99;
+    display: none;
+}
+
+@media (min-width:769px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+@media (max-width:768px) {
+    #topbar {
+        justify-content: space-between;
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+    #topbar ul {
+        justify-content: center;
+    }
+
+    #topbar a {
+        display: block;
+    }
+
+    img.logo {
+        display: flex;
+    }
+
+    /* 漢堡按鈕  */
+    .hamburger {
+        display: inline-block;
+        cursor: pointer;
+        background-color: transparent;
+        background: #C94344;
+        border-radius: 50px;
+        border: 3px solid #F88D8E;
+        margin-right: 1rem;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px 15px;
+        background-color: #FFFFFF;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger.is-active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.is-active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    ul.morelogo {
+        width: 0%;
+    }
+
+    .reserve_btn {
+        margin-left: 2rem;
+    }
+
+    img.logo {
+        width: 23%;
+    }
+
+    .navigation {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        padding: 0 10px;
+        border-radius: 5px;
+
+        background-color: rgb(255, 255, 255, 0.5);
+        backdrop-filter: blur(5px);
+        animation: navigation 0.35s both;
+    }
+
+    #banner {
+        height: 80vh;
+    }
+
+    /* footer */
+    #fixedTop {
+        bottom: 4rem;
+        right: 2rem
+    }
+
+    footer p {
+        font-size: 0.75rem;
+    }
+
+    .footer_menu {
+        display: none;
+    }
+
+    .footer_reserve_btn {
+        flex-direction: column;
+    }
+
+    .footer_reserve_btn img {
+        width: 35%;
+    }
+
+    .footer_reserve_btn a {
+        font-size: 1.06rem;
+        padding: 1rem 2rem;
+        margin: 1rem 0;
+    }
+
+    .footer_reserve_btn {
+        margin: 1rem 0 5rem 0;
+    }
+
+    footer ul {
+        margin-left: 2rem;
+    }
+
+    .map {
+        font-size: 1rem;
+    }
+
+    .map a {
+        padding: 0.35rem 0.8rem;
+        font-size: 0.68rem;
+    }
+
+    @keyframes navigation {
+        from {
+            opacity: 1;
+        }
+
+        to {
+            opacity: 0;
+        }
+    }
+
+    .navigation.show {
+        display: block;
+        animation: show 0.35s both;
+    }
+
+    @keyframes show {
+        from {
+            opacity: 0;
+        }
+
+        to {
+            opacity: 1;
+        }
+    }
+
+    .menu {
+        flex-direction: column;
+        background-color: transparent;
+        backdrop-filter: none;
+        border: none;
+        box-shadow: none;
+    }
+
+    .menu a {
+        padding: 15px 10px;
+    }
+}
+
+@media (max-width:390px) {
+    #fixedTop {
+        bottom: 1rem;
+        right: 1rem;
+    }
+
+    /* 導覽列 */
+    #topbar {
+        padding: 0.2rem;
+    }
+
+    img.logo {
+        width: 40%;
+    }
+
+    .hamburger {
+        padding: 0.1rem 0.2rem;
+        margin: 0.5rem;
+    }
+
+    .bar {
+        width: 14px;
+        height: 2px;
+        margin: 4px 10px;
+    }
+
+    .hamburger.is-active .bar:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .hamburger.is-active .bar:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    ul.morelogo {
+        width: 0%;
+    }
+
+    .navigation {
+        top: 69px;
+        right: 0;
+        padding: 10px 45px;
+        border-radius: 25px;
+        background-color: rgb(255, 255, 255, 0.8);
+    }
+
+    .reserve_btn {
+        margin-left: 3rem;
+    }
+
+    #fixedTop img {
+        width: 25px;
+        height: 25px;
+    }
+
+    /* footer */
+    .footer_reserve_btn img {
+        width: 180px;
+        height: auto;
+    }
+
+    .footer_reserve_btn a {
+        font-weight: 500;
+        font-size: 0.93rem;
+        padding: 0.7rem 2.3rem;
+    }
+
+    .footer_reserve_btn a img {
+        width: 8px;
+    }
+
+    .footer_reserve_btn {
+        margin-bottom: 1rem;
+    }
+
+    .footer_reserve_btn .r_btn {
+        background-image: url(./image/rwd390/right_w.png);
+        width: 7px;
+        height: 12px;
+        margin-left: 2rem;
+    }
+
+    .footer_icon a {
+        width: 32px;
+        height: 30px;
+    }
+
+    .icon-fb {
+        background-image: url(./image/rwd390/fb.png);
+    }
+
+    .icon-ig {
+        background-image: url(./image/rwd390/ig.png);
+    }
+
+    .icon-line {
+        background-image: url(./image/rwd390/line.png);
+    }
+
+    .map a {
+        display: none;
+    }
+
+    .map {
+        font-size: 0.875rem;
+        margin-bottom: 4rem;
+    }
+
+    footer {
+        padding: 4rem 0 0 0;
+    }
+
+    footer p {
+        padding: 1rem 5rem;
+        line-height: 180%;
+        color: #616161;
+        background-color: #FFF0CA;
+        font-size: 0.75rem;
+    }
+}
+/* 導覽列/footer RWD */
+@media (max-width:1919px) {
+    /* 導覽列 */
+    nav{
+        font-size: 1rem;
+    }
+    .logoMore img{
+        width: 90%;
+    }
+    .reserve_btn a {
+        padding: 0.8rem 1.5rem;
+    }
+    /* footer */
+    footer{
+        margin-top: 2vh;
+    }
+    .footer_reserve_btn{
+        margin-bottom: 1rem;
+    }
+    .footer_reserve_btn img {
+        width: 17%;
+    }
+    .footer_reserve_btn a{
+        font-size: 1rem;
+        padding: 0.7rem 1.6rem;
+    }
+    .footer_reserve_btn .r_btn{
+        margin-left: 2rem;
+        margin-top: 2px;
+    }
+    h2.footer_title {
+        font-size: 1rem;
+    }
+    .menu_title p {
+        font-size: 0.875rem;
+    }
+    .map{
+        font-size: 1rem;
+    }
+    .map a {
+        font-size: 0.6875rem;
+        padding: .4rem .7rem;
+    }
+    footer p{
+        font-size: .75rem;
+    }
+}
+@media (min-width:1440px){
+	.hamburger {
+		display: none;
+	}
+}
+@media (max-width:1439px) {
+    #topbar{
+        justify-content: space-between;
+        background: rgba(255, 255, 255,0.8);
+        padding: 0.7rem;
+    }
+	#topbar ul {
+		justify-content: center;
+	}
+    #topbar a{
+        display: block;
+    }
+    img.logo{
+        display: flex;
+        width: 155px;
+        height: auto;
+    }
+	/* 漢堡按鈕  */
+	.hamburger {
+		display: inline-block;/* 自動抓內容(.bar)的尺寸 */
+		cursor: pointer;
+		/* 取消button預設樣式 */
+		background-color: transparent;
+        background: #C94344;
+        border-radius: 50px;
+        border: 3px solid #F88D8E;
+        margin-right: 1rem;
+	}
+
+	.bar {
+		display: block;/* 修改span行內元素為區塊 */
+		width: 25px;
+		height: 3px;
+		margin: 6px 15px;
+        border-radius: 20px;
+		background-color: #FFFFFF;
+		transition: all 0.3s ease-in-out;
+	}
+	.hamburger.is-active .bar:nth-child(2) {
+		opacity: 0;
+	}
+
+	.hamburger.is-active .bar:nth-child(1) {
+		transform: translateY(9px) rotate(45deg);
+	}
+
+	.hamburger.is-active .bar:nth-child(3) {
+		transform: translateY(-9px) rotate(-45deg);
+	}
+    ul.morelogo{
+        width: 0%;
+    }
+    .reserve_btn{
+        margin-left: 2rem;
+    }
+	.navigation {
+		display: none;
+		position: absolute;
+		top: 95px;
+		right: 0;
+		padding: 0 20px;
+		border-radius: 5px;
+        font-size: 1.5rem;
+		background-color: rgb(255, 255, 255,0.8);
+		backdrop-filter: blur(5px);
+		animation: navigation 0.35s both;
+	}
+    .menu{
+        padding: 2rem 0;
+    }
+    .reserve_btn {
+        margin-left: 0;
+        margin-bottom: 2rem;
+    }
+    .reserve_btn a{
+        padding: 1rem 1.8rem;
+        margin: 0 auto;
+    }
+    /* footer */
+    #fixedTop{
+        bottom: 4rem;
+        right: 2rem
+    }
+    footer p{
+        font-size: 0.75rem;
+    }
+    .footer_menu{
+        display: none;
+    }
+    
+    .footer_reserve_btn {
+        flex-direction: column;
+    }
+    .footer_reserve_btn img {
+        width: 30%;
+    }
+    .footer_reserve_btn a{
+        font-size: 1.06rem;
+        padding: 1rem 2rem;
+        margin: 1rem 0;
+    }
+    .footer_reserve_btn{
+        margin:1rem 0 5rem 0;
+    }
+    footer ul{
+        margin-left: 2rem;
+    }
+    .map{
+        font-size: 1rem;
+    }
+    .map a{
+        padding: 0.35rem 0.8rem;
+        font-size: 0.68rem;
+    }
+	@keyframes navigation {
+		from {
+			opacity: 1;
+		}
+
+		to {
+			opacity: 0;
+		}
+	}
+	.navigation.show {
+		display: block;
+		animation: show 0.35s both;
+	}
+	@keyframes show {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+	.menu {
+		flex-direction: column;
+		background-color: transparent;
+		backdrop-filter: none;
+		border: none;
+		box-shadow: none;
+	}
+	.menu a {
+		padding: 15px 10px;
+	}
+}
+@media (max-width:767px) {
+    /* top按鈕 */
+    #fixedTop {
+        bottom: 1rem;
+        right: 1rem;
+    }
+    /* 導覽列 */
+    #topbar{
+        padding: 0.2rem;
+    }
+    img.logo {
+        width: 133px;
+        height: auto;
+    }
+    .hamburger {
+        padding: 0.1rem 0.5rem;
+        margin: 0.5rem;
+    }
+    .bar {
+        width: 20px;
+        height: 2px;
+        margin: 4px 10px;
+        border-radius: 20px;
+    }
+    .hamburger.is-active .bar:nth-child(1) {
+		transform: translateY(6px) rotate(45deg);
+	}
+
+	.hamburger.is-active .bar:nth-child(3) {
+		transform: translateY(-6px) rotate(-45deg);
+	}
+    ul.morelogo{
+        width: 0%;
+    }
+    .navigation{
+        top: 68px;
+        right: 0;
+        padding: 10px 45px;
+        border-radius: 25px;
+        background-color: rgb(255, 255, 255,0.9);
+        width: 100%;
+        font-size: 1.5rem;
+    }
+    .reserve_btn{
+        margin-left: 0;
+    }
+    #fixedTop img {
+        width: 25px;
+        height: 25px;
+    }
+        /* footer */
+    .footer_reserve_btn img {
+        width: 180px;
+        height: auto;
+    }
+    .footer_reserve_btn a {
+        font-weight: 500;
+        font-size: 0.93rem;
+        padding: 0.7rem 2.3rem;
+    }
+    .footer_reserve_btn a img {
+        width: 8px;
+    }
+    .footer_reserve_btn {
+        margin-bottom: 1rem;
+    }
+    .footer_reserve_btn .r_btn{
+        background-image: url(../image/rwd390/right_w.png);
+        width: 7px;
+        height: 12px;
+        margin-left: 2rem;
+        margin-top: 5px;
+    }
+    .footer_reserve_btn a:hover .r_btn{
+        background-image: url(../image/rwd390/right_r.png);
+    }
+    .footer_icon a {
+        width: 32px;
+        height: 30px;
+    }
+    .icon-fb {
+        background-image: url(../image/rwd390/fb.png);
+    }
+    .icon-ig {
+        background-image: url(../image/rwd390/ig.png);
+    }
+    .icon-line {
+        background-image: url(../image/rwd390/line.png);
+    }
+    .icon-fb:hover {
+        background-image: url(../image/rwd390/fb.png);
+    }
+    .icon-ig:hover {
+        background-image: url(../image/rwd390/ig.png);
+    }
+    .icon-line:hover {
+        background-image: url(../image/rwd390/line.png);
+    }
+    .map a{
+        display: none;
+    }
+    .map {
+        font-size: 0.875rem;
+        margin-bottom: 4rem;
+    }
+    footer{
+        padding: 4rem 0 0 0;
+    }
+    footer p {
+        padding: 1rem 5rem;
+        line-height: 180%;
+        color: #616161;
+        background-color: #FFF0CA;
+        font-size: 0.75rem;
+    }
+}
