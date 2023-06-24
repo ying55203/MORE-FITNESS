@@ -3597,6 +3597,9 @@ footer > div{
 		backdrop-filter: blur(5px);
 		animation: navigation 0.35s both;
 	}
+    nav{
+        margin-top: 0;
+    }
     .menu {
         padding-top: 1rem;
     }
