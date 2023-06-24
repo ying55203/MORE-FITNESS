@@ -1633,7 +1633,7 @@ footer > div{
     }
     .reserve_btn a{
         padding: 1rem 1.8rem;
-        margin: 0 auto;
+        margin: 2rem auto 0 auto;
     }
     /* footer */
     #fixedTop{
@@ -1745,6 +1745,9 @@ footer > div{
         background-color: rgb(255, 255, 255,0.9);
         width: 100%;
         font-size: 1.5rem;
+    }
+    .menu {
+        padding-top: 1rem;
     }
     .reserve_btn{
         margin-left: 0;

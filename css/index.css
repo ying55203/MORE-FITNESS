@@ -3597,13 +3597,16 @@ footer > div{
 		backdrop-filter: blur(5px);
 		animation: navigation 0.35s both;
 	}
+    .menu {
+        padding-top: 1rem;
+    }
     .reserve_btn {
         margin-left: 0;
         margin-bottom: 2rem;
     }
     .reserve_btn a{
         padding: 1rem 1.8rem;
-        margin: 0 auto;
+        margin: 2rem auto 0 auto;
     }
     /* footer */
     #fixedTop{
