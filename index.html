@@ -71,7 +71,7 @@
         </div>
 
         <!-- 關於我們   -->
-        <div id="aboutUs">
+        <div id="aboutUs" class="smoove">
             <div class="intro">
                 <div class="title abus_title">
                     <img src="./image/index/aboutusPlate.png" alt="">
@@ -115,7 +115,7 @@
 
         </div>
         <!-- feature區 -->
-        <div id="feature">
+        <div id="feature" class="smoove">
             <div class="title feature_title">
                 <img src="./image/index/featurePic.png" alt="">
                 <div class="title_text title_text_feature">
@@ -197,7 +197,7 @@
             </div>
         </div>
         <!-- 課程種類 -->
-        <div id="courses">
+        <div id="courses" class="smoove">
             <div class="title cours_title ">
                 <img src="./image/index/courses_pic.png" alt="">
                 <div class="title_text title_text_cours">
@@ -264,7 +264,7 @@
         </div>
 
         <!-- 預約體驗 -->
-        <div id="reserve">
+        <div id="reserve" class="smoove">
             <div class="for_free">
                 <img src="./image/index/free(1920).png" alt="">
             </div>
@@ -354,6 +354,15 @@
     </footer>
     <script src="./jQuery/js/jquery-1.11.3.min.js"></script>
     <script src="./JS/script.js"></script>
+    <!-- jQuery Smoove -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.10/jquery.smoove.min.js"></script>
+    <!-- activate jQuery Smoove -->
+    <script>
+        $('.smoove').smoove({
+            offset: '40%',
+            min_width: 0
+        });
+    </script>
 </body>
 
 </html>
